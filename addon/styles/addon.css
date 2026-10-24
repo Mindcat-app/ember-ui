@@ -105,3 +105,16 @@
     color: #d1d5db;
     background: #111827;
 }
+
+/* Respect the OS "reduce motion" setting everywhere (WCAG 2.3.3). Three components already do this
+   for their own animations; this covers the rest. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
