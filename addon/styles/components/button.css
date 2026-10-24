@@ -641,3 +641,19 @@ body[data-theme='dark'] .oauth-provider-logo-google svg {
     width: 14px;
     height: 14px;
 }
+
+/* Keyboard focus is always visible (WCAG 2.4.7). The button rules above remove the outline on :focus
+   and the console's Tailwind ringColor default is transparent; :focus-visible keeps mouse clicks unchanged. */
+.btn:focus-visible,
+a.btn:focus-visible,
+.fc-button:focus-visible,
+.ui-full-calendar .fc-button:focus-visible {
+    outline: 2px solid #1c6cc7; /* sky-600: 5.23:1 on white */
+    outline-offset: 2px;
+}
+
+body[data-theme='dark'] .btn:focus-visible,
+body[data-theme='dark'] a.btn:focus-visible,
+body[data-theme='dark'] .fc-button:focus-visible {
+    outline-color: #60a5fa; /* blue-400: 5.77:1 on gray-800 */
+}
